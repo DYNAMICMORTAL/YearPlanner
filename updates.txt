@@ -1,7 +1,0 @@
-GAUTAM AMIN - v.1 
-Updated CSS file 
-<code>
-----------------------
-
-```updates will be shown here```
-</code>
