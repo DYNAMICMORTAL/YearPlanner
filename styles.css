@@ -3,58 +3,93 @@
 @import './variables.css';
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "kern";
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 body{
     font-family: 'Montserrat', sans-serif;
     color: var(--pure);
     background: var(--primary);
 }
-header{
-    background: linear-gradient(135deg, rgba(0,0,0,1), rgba(0,0,0,0.2));
-    min-height: 10vh;
-    background-size: cover;
-}
-header nav{
-    padding: 20px 40px 20px 100px;
-    display: grid;
-    font-size: 1.2em;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    user-select: none;
-    border-bottom: 1px solid var(--gray);
-}
-header nav h5 {
-  margin-left: 52em;
-/*   font-size: 1.2em; */
+::selection{
+  background-color: var(--selection);
   color: #fff;
-/* text-decoration: none; */
+}
+#navigationBar{
+  padding: 20px 40px 20px 100px;
+  background: var(--primary);
+  border-bottom: unset;
+  backdrop-filter: saturate(180%) blur(2px);
+  background: hsla(0,0%,100%,.8);
+  min-height: 11vh;
+  background-size: cover;
+  overflow: hidden;
+/*   position: absolute; */
+  top: 0;
+  z-index: 3000;
+  display: grid;
+  font-size: 1.2em;
+  grid-template-columns: 1fr 2fr 3fr;
+  align-items: center;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+nav h1 {
+  color: var(--dark);
+}
+.header_sticky nav h5 {
+  margin-left: 60em;
+  margin-right: -20em;
+  color: var(--ternary);
   text-decoration: inherit;
   
 }
-section.strip{
-    display: flex;
-    font-size: 5em;
-    user-select: none;
-    justify-content: space-around;
-    align-items: center;
-/*     background: var(--dark); */
-    padding: 45px 0;
-    background: center / contain no-repeat url("iridescent.jpg"), #eee 35% url("iridescent.jpg");
+.sticky {
+  position: fixed;
+/*   top: 0; */
+  width: 100%;
+  transition: all 0.3s ease;
 }
 
+.site-main-wrapper{
+  position: relative;
+}
+.hamburger{
+  z-index: 11;
+  margin-left: 35em;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.hamburger img{
+  width: 30px;
+}
+section.strip{
+  display: flex;
+  font-size: 5em;
+  user-select: none;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+  background: center / contain no-repeat url("iridescent.jpg"), #eee 35% url("iridescent.jpg");
+  transition: all 0.3s ease;
+}
+/* section.margin {
+  margin-top: 0.9em;
+} */
 section.month {
-    padding-top: 100px;
-    padding-left: 10rem;
-    color: #000;
-    height: 100%;
-    padding-bottom: 6em;
-    background: #e7e4e4;
-/*     height: 1000px; */
-/*     user-select: none; */
+  padding-top: 100px;
+  padding-left: 10rem;
+  color: #000;
+  height: 100%;
+  padding-bottom: 6em;
+  background: #e7e4e4;
 }
 
 section.month h3 {
@@ -82,7 +117,7 @@ section.month h3 {
 }
 .addButton {
   background-color: #f0ecfc;
-background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
   line-height: 42px;
   padding: 0;
   border: none;
@@ -282,6 +317,10 @@ footer .footer-socials a:hover{
     color: var(--pure);
 }
 
+.copyright {
+  padding-left: 3em;
+  padding-top: 0;
+}
 
 /* END OF ACTUAL MY WEBSITE */
 /* EXPERIMENT UP AHEAD, IF MESSES UP WITH ORIGINAL DELETE OR TRY TO CUSTOMIZE IT */
@@ -351,8 +390,78 @@ footer .footer-socials a:hover{
 
 /* container style ends */
 
+/* MEDIA QUERIES STARTS HERE */
+/* @media (min-width:576px){
+  
+}
+
+@media screen and  (min-width:768px){
+  .months {
+    width: 24em;
+  }
+  h3 {
+    font-size: 0.9em;
+  }
+  .item {
+    max-width: 27em;
+  }
+  .header_sticky nav h5 {
+    margin-left: 37em;
+    font-size: 1em;
+    margin-right: -41em;
+    color: var(--ternary);
+    text-decoration: inherit;
+  
+}
+  section.month {
+    padding-left: 5rem;
+  }
+  #navigationBar {
+    font-size: 0.8em;
+  }
+  .copyright {
+    padding-left: 4em;
+  }
+}
+
+@media screen and (min-width:992px){
+  .months {
+    width: 37em;
+  }
+  .item {
+    max-width: 38em;
+  }
+  .header_sticky nav h5 {
+    margin-left: 48em;
+    font-size: 1em;
+    margin-right: -41em;
+    color: var(--ternary);
+    text-decoration: inherit;
+  
+}
+  section.month {
+    padding-left: 5rem;
+  }
+  #navigationBar {
+    font-size: 0.8em;
+  }
+  .copyright {
+    padding-left: 4em;
+  }
+}
+@media screen and (min-width:1200px){
+  section.month {
+    padding-left: 5rem;
+  }
+  #navigationBar {
+    font-size: 0.8em;
+  }
+  .copyright {
+    padding-left: 4em;
+  }
+}
 
 
-
+ */
 
 
