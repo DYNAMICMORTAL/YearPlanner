@@ -77,7 +77,7 @@ section.strip{
   justify-content: space-around;
   align-items: center;
   padding: 50px;
-  background: center / contain no-repeat url("iridescent.jpg"), #eee 35% url("iridescent.jpg");
+  background: center / contain no-repeat url("./iridescent.jpg"), #eee 35% url("./iridescent.jpg");
   transition: all 0.3s ease;
 }
 /* section.margin {
