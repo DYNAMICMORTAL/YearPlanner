@@ -6,3 +6,6 @@ DEMO:-  https://year2023.dynamicmortal.repl.co/
 
 ## CONTRIBUTORS
 Mihir Amin & Gautam Amin
+
+# RELEASE 
+To be released soon
