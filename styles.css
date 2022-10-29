@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
-@import './utlities.css';
+@import './utlilities.css';
 @import './variables.css';
 
 *{
@@ -84,9 +84,56 @@ section.strip{
   margin-top: 0.9em;
 } */
 .flex {
-  display: flex;
+/*   display: flex; */
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
   background: var(--monthbackground);
+  grid-template-areas:
+    "div1 div13"
+    "div2 div13"
+    "div3 div13"
+    "div4 div13"
+    "div5 div13"
+    "div6 div13"
+    "div7 div13"
+    "div8 div13"
+    "div9 div13"
+    "div10 div13"
+    "div11 div13"
+    "div12 div13";
 }
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 2 / 1 / 3 / 2; }
+.div3 { grid-area: 1 / 2 / 3 / 3; }
+
+.div13 { grid-area: div13; }
+
+.div1 { grid-area: div1; }
+
+.div2 { grid-area: div2; }
+
+.div3 { grid-area: div3; }
+
+.div4 { grid-area: div4; }
+
+.div5 { grid-area: div5; }
+
+.div6 { grid-area: div6; }
+
+.div7 { grid-area: div7; }
+
+.div8 { grid-area: div8; }
+
+.div9 { grid-area: div9; }
+
+.div10 { grid-area: div10; }
+
+.div11 { grid-area: div11; }
+
+.div12 { grid-area: div12; }
 section.month {
   display: flex;
   flex-direction: column;
@@ -94,14 +141,16 @@ section.month {
   padding-left: 10rem;
   color: #000;
   height: 100%;
-  padding-bottom: 6em;
+  padding-bottom: 1em;
   background: #e7e4e4;
 }
 section.otherMonths {
   padding-top: 8em;
-  padding-left: 6em;
+  padding-left: 18em;
   font-size: 0.9em;
-  
+  position: sticky;
+  top: 10em;
+  padding-bottom: 50px;
 }
 section.otherMonths .otherMonthsList{
   color: var(--dark);
@@ -111,8 +160,8 @@ section.otherMonths .otherMonthsList{
 }
 section.otherMonths ul li a {
   text-decoration: none;
-  user-select: none;
   color: var(--dark);
+  user-select: none;
 }
 section.otherMonths ul li a::active {
   text-decoration: none;
@@ -124,6 +173,10 @@ section.otherMonths ul li a:hover {
   padding: 5px;
   transition: all 0.5s ease;
 }
+section.otherMonths .sideNav {
+  position: sticky;
+}
+
 section.month h3 {
   font-size: 4em;
   user-select: none;
