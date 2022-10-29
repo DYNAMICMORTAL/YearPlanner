@@ -83,7 +83,13 @@ section.strip{
 /* section.margin {
   margin-top: 0.9em;
 } */
+.flex {
+  display: flex;
+  background: var(--monthbackground);
+}
 section.month {
+  display: flex;
+  flex-direction: column;
   padding-top: 100px;
   padding-left: 10rem;
   color: #000;
@@ -91,7 +97,33 @@ section.month {
   padding-bottom: 6em;
   background: #e7e4e4;
 }
-
+section.otherMonths {
+  padding-top: 8em;
+  padding-left: 6em;
+  font-size: 0.9em;
+  
+}
+section.otherMonths .otherMonthsList{
+  color: var(--dark);
+  list-style-type: none;
+  padding-left: 2em;
+  border-left: 1px solid var(--dark);
+}
+section.otherMonths ul li a {
+  text-decoration: none;
+  user-select: none;
+  color: var(--dark);
+}
+section.otherMonths ul li a::active {
+  text-decoration: none;
+  color: var(--dark);
+}
+section.otherMonths ul li a:hover {
+  color: var(--pure);
+  background: var(--dark);
+  padding: 5px;
+  transition: all 0.5s ease;
+}
 section.month h3 {
   font-size: 4em;
   user-select: none;
