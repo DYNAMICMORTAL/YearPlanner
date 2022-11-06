@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   <script src="https://kit.fontawesome.com/13b81bd735.js" crossorigin="anonymous"></script>
 <script type="module">const user = await getUserInfo() </script>
+  <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
 </head>
 <body>
   
@@ -18,9 +19,26 @@
      <nav id="navigationBar">
       <h1>YEAR 2023</h1>
       <a href="about.html"><h5>About</h5></a>
-      <button class="hamburger">
-            <img src="menu.svg" alt="">
-      </button>
+<!--       <button class="hamburger">
+            <lord-icon
+    src="https://cdn.lordicon.com/zmkotitn.json"
+    trigger="loop"
+    delay="1000"
+    style="width:30px;height:30px;rotate:90deg;">
+</lord-icon>
+      </button> -->
+  <button class="hamburger">
+  <div class="dropdown">
+  <lord-icon
+    src="https://cdn.lordicon.com/zmkotitn.json"
+    trigger="loop"
+    delay="1000"
+    style="width:30px;height:30px;rotate:90deg;">
+</lord-icon>
+  <div class="dropdown-content">
+  <a href="https://loginlogout.dynamicmortal.repl.co">Login</a>
+  </div>
+  </div></button>
     </nav>
   </div>
   </div>
@@ -38,7 +56,7 @@
     <ul class="list">
     </ul>
   </section></div>
-  <div class="div2"><section class="month">
+  <div class="div2"><section class="month2">
     <h3>February 2023</h3>
     <form class="jan">
       <input class="months" type="text" placeholder="February Stuff....">
